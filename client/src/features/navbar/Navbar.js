@@ -6,6 +6,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import EtsyLogo from "../../assets/etsy.png";
 
 const user = {
   name: "Tom Cook",
@@ -213,9 +214,9 @@ function NavBar({ children }) {
         </Disclosure>
 
         <header className="bg-white shadow">
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-              eMart
+              <img className="w-14" src={EtsyLogo} />
             </h1>
           </div>
         </header>
