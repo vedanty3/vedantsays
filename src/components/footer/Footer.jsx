@@ -5,3 +5,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// 01:33:00
