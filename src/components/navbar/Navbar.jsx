@@ -42,10 +42,10 @@ const Navbar = () => {
           Homepage
         </Link>
         <Link className={styles.link} href="/">
-          Contact
+          About
         </Link>
         <Link className={styles.link} href="/">
-          About
+          Contact
         </Link>
         <AuthLinks />
       </div>
