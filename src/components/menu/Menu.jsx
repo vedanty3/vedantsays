@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./menu.module.css";
 import MenuPosts from "../menuPosts/menuPosts";
 import MenuCategories from "../menuCategories/MenuCategories";
