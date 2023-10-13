@@ -1,14 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./footer.module.css";
 import Link from "next/link";
-import { useContext } from "react";
-import { ThemeContext } from "@/context/ThemeContext";
 
 const Footer = () => {
-  const { theme } = useContext(ThemeContext);
-
   return (
     <div className={styles.container}>
       <div className={styles.info}>
@@ -29,13 +23,19 @@ const Footer = () => {
           >
             <Image src="/linkedin.png" alt="linkedin" width={18} height={18} />
           </Link>
-          <Link target="_blank" href="https://github.com/uuvedant4">
-            <Image
-              src={theme === "dark" ? "/github2.png" : "/github.png"}
-              alt="github"
-              width={18}
-              height={18}
-            />
+          <Link
+            style={{ display: "var(--hideLightModeLogo)" }}
+            target="_blank"
+            href="https://github.com/uuvedant4"
+          >
+            <Image src="/github.png" alt="github" width={18} height={18} />
+          </Link>
+          <Link
+            style={{ display: "var(--hideDarkModeLogo)" }}
+            target="_blank"
+            href="https://github.com/uuvedant4"
+          >
+            <Image src="/github2.png" alt="github" width={18} height={18} />
           </Link>
           <Link target="_blank" href="https://twitter.com/__vedant4">
             <Image src="/twitter.png" alt="twitter" width={18} height={18} />
