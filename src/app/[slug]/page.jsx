@@ -69,5 +69,3 @@ function SinglePage() {
 }
 
 export default SinglePage;
-
-// 01:47:00
