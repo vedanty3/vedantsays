@@ -2,11 +2,11 @@ import Image from "next/image";
 import styles from "./card.module.css";
 import Link from "next/link";
 
-function Card() {
+function Card({ key, item }) {
   return (
-    <div className={styles.container}>
+    <div key={key} className={styles.container}>
       <div className={styles.imageContainer}>
-        <Image className={styles.image} src="/p1.jpeg" alt="" fill />
+        <Image className={styles.image} src={item.img} alt="" fill />
       </div>
       <div className={styles.textContainer}>
         <div className={styles.details}>
@@ -14,7 +14,7 @@ function Card() {
           <span className={styles.category}>CULTURE</span>
         </div>
         <Link href="/">
-          <h1>Lorem ipsum consectetur, adipisicing elit. Et, nihil?</h1>
+          <h1>{item.title}</h1>
         </Link>
         <p className={styles.desc}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
