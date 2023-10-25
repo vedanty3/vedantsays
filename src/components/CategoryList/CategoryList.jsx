@@ -22,7 +22,7 @@ async function CategoryList() {
           <Link
             key={item._id}
             className={`${styles.category} ${styles[item.slug]}`}
-            href="/blog?cat=style"
+            href={`/blog?cat=${item.slug}`}
           >
             {item.img && (
               <Image
