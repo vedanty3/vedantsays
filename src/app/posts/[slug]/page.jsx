@@ -2,6 +2,7 @@ import Menu from "@/components/menu/Menu";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
+import decodeUriComponent from "decode-uri-component";
 
 const getData = async (slug) => {
   const response = await fetch(`http://localhost:3000/api/posts/${slug}`, {
@@ -14,9 +15,10 @@ const getData = async (slug) => {
 };
 
 async function SinglePage({ params }) {
-  const { slug } = params;
-  const data = await getData(slug);
+  const slug = params.slug;
+  const encodedSlug = decodeUriComponent(slug);
 
+  const data = await getData(slug);
   return (
     <div className={styles.container}>
       <div className={styles.infoContainer}>
@@ -52,7 +54,7 @@ async function SinglePage({ params }) {
             className={styles.description}
           />
           <div className={styles.comments}>
-            <Comments />
+            <Comments postSlug={encodedSlug} />
           </div>
         </div>
         <Menu />

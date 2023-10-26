@@ -14,6 +14,7 @@ const getData = async () => {
 
 async function CategoryList() {
   const data = await getData();
+  console.log(data);
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
