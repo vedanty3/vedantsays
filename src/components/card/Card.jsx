@@ -2,9 +2,9 @@ import Image from "next/image";
 import styles from "./card.module.css";
 import Link from "next/link";
 
-function Card({ key, item }) {
+function Card({ item }) {
   return (
-    <div key={key} className={styles.container}>
+    <div className={styles.container}>
       {item.img && (
         <div className={styles.imageContainer}>
           <Image className={styles.image} src={item.img} alt="" fill />

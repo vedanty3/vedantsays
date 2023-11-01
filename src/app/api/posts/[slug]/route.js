@@ -1,8 +1,6 @@
 import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
 
-const POST_PER_PAGE = 4;
-
 export const GET = async (req, { params }) => {
   const { slug } = params;
   try {
