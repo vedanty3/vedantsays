@@ -2,7 +2,7 @@ import Pagination from "../pagination/Pagination";
 import styles from "./cardList.module.css";
 import Card from "../card/Card";
 
-const POST_PER_PAGE = 2;
+const POST_PER_PAGE = 4;
 
 const getData = async (page, cat) => {
   const response = await fetch(
