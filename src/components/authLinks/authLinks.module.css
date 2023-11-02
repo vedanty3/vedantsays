@@ -30,6 +30,8 @@
   justify-content: center;
   gap: 50px;
   font-size: 36px;
+  z-index: 999;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 640px) {

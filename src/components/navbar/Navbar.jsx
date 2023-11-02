@@ -31,7 +31,7 @@ const Navbar = () => {
         <Link target="_blank" href="https://twitter.com/__vedant4">
           <Image src="/twitter.png" alt="twitter" width={24} height={24} />
         </Link>
-        <Link target="_blank" href="https://www.instagram.com/__vedant6/">
+        <Link target="_blank" href="https://www.instagram.com/vedantsays/">
           <Image src="/instagram.png" alt="instagram" width={24} height={24} />
         </Link>
       </div>

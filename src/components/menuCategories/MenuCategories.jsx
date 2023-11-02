@@ -11,31 +11,31 @@ function MenuCategories() {
         Style
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=fashion"
         className={`${styles.categoryItem} ${styles.fashion}`}
       >
         Fashion
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=food"
         className={`${styles.categoryItem} ${styles.food}`}
       >
         Food
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=travel"
         className={`${styles.categoryItem} ${styles.travel}`}
       >
         Travel
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=culture"
         className={`${styles.categoryItem} ${styles.culture}`}
       >
         Culture
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=coding"
         className={`${styles.categoryItem} ${styles.coding}`}
       >
         Coding

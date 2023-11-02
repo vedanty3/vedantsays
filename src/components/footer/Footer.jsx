@@ -40,7 +40,7 @@ const Footer = () => {
           <Link target="_blank" href="https://twitter.com/__vedant4">
             <Image src="/twitter.png" alt="twitter" width={18} height={18} />
           </Link>
-          <Link target="_blank" href="https://www.instagram.com/__vedant6/">
+          <Link target="_blank" href="https://www.instagram.com/vedantsays/">
             <Image
               src="/instagram.png"
               alt="instagram"
@@ -79,7 +79,7 @@ const Footer = () => {
           <Link target="_blank" href="https://github.com/uuvedant4">
             GitHub
           </Link>
-          <Link target="_blank" href="https://www.instagram.com/__vedant6/">
+          <Link target="_blank" href="https://www.instagram.com/vedantsays/">
             Instagram
           </Link>
         </div>

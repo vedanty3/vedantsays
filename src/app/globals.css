@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
 :root {
   --bg: white;
   --textColor: black;
@@ -9,6 +11,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Macondo", cursive;
 }
 
 body {
@@ -80,9 +83,10 @@ a {
 }
 
 .ql-container {
-  font-size: 28px !important;
+  font-size: 16px !important;
 }
 
 .quill > .ql-container > .ql-editor.ql-blank::before {
   color: #b3b3b1;
+  font-style: normal;
 }
