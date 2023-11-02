@@ -5,8 +5,7 @@ function Featured() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b>Hey, Vedant Yetekar here! </b>Explore boundless tech possibilities
-        with me.
+        <b>Hey, Vedant Yetekar here!</b> Let's Explore infinite tech horizons.
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>

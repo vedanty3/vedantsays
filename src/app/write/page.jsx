@@ -136,6 +136,9 @@ const WritePage = () => {
         className={styles.select}
         onChange={(e) => setCatSlug(e.target.value)}
       >
+        <option selected disabled value="">
+          category
+        </option>
         <option value="style">style</option>
         <option value="fashion">fashion</option>
         <option value="food">food</option>
@@ -175,7 +178,7 @@ const WritePage = () => {
           theme="bubble"
           value={value}
           onChange={setValue}
-          placeholder="Tell your story..."
+          placeholder="What's on your mind?"
         />
       </div>
       <button className={styles.publish} onClick={handleSubmit}>

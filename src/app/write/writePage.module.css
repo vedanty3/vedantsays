@@ -5,10 +5,11 @@
 }
 
 .select {
-  margin-bottom: 50px;
-  padding: 10px 20px;
+  margin-bottom: 30px;
+  padding: 5px 10px;
   margin-left: 50px;
   width: max-content;
+  height: 30px;
 }
 
 .editor {
@@ -18,10 +19,14 @@
   position: relative;
 }
 
+.button {
+  position: absolute;
+}
+
 .button,
 .addButton {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: transparent;
   border: 1px solid var(--textColor);
@@ -33,6 +38,7 @@
 
 .addButton {
   border-color: #1a8917;
+  z-index: 999;
 }
 
 .add {
@@ -46,8 +52,8 @@
 }
 
 .input {
-  padding: 50px;
-  font-size: 64px;
+  padding: 20px;
+  font-size: 28px;
   border: none;
   outline: none;
   background-color: transparent;
@@ -59,6 +65,7 @@
 }
 
 .textArea {
+  padding: 20px 20px;
   width: 100%;
 }
 

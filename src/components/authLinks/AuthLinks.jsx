@@ -7,7 +7,11 @@ import { signOut, useSession } from "next-auth/react";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
-  const { status } = useSession();
+  const { data, status } = useSession();
+
+  const closeMenu = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -17,9 +21,11 @@ const AuthLinks = () => {
         </Link>
       ) : (
         <>
-          <Link className={styles.link} href="/write">
-            Write
-          </Link>
+          {data?.role === "admin" && (
+            <Link className={styles.link} href="/write">
+              Write
+            </Link>
+          )}
           <span className={styles.link} onClick={() => signOut()}>
             Logout
           </span>
@@ -32,15 +38,34 @@ const AuthLinks = () => {
       </div>
       {open && (
         <div className={styles.responsiveMenu}>
-          <Link href="/">Homepage</Link>
-          <Link href="/">Contact</Link>
-          <Link href="/">About</Link>
-          {status === "notAuthorized" ? (
-            <Link href="/login">Login</Link>
+          <Link onClick={closeMenu} href="/">
+            Homepage
+          </Link>
+          <Link onClick={closeMenu} href="/">
+            Contact
+          </Link>
+          <Link onClick={closeMenu} href="/">
+            About
+          </Link>
+          {status === "unauthenticated" ? (
+            <Link onClick={closeMenu} href="/login">
+              Login
+            </Link>
           ) : (
             <>
-              <Link href="/write">Write</Link>
-              <span className={styles.link}>Logout</span>
+              {data?.role === "admin" && (
+                <Link onClick={closeMenu} href="/write">
+                  Write
+                </Link>
+              )}
+              <span
+                onClick={() => {
+                  closeMenu();
+                  signOut();
+                }}
+              >
+                Logout
+              </span>
             </>
           )}
         </div>
