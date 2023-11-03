@@ -41,7 +41,7 @@ const AuthLinks = () => {
           <Link onClick={closeMenu} href="/">
             Homepage
           </Link>
-          <Link onClick={closeMenu} href="/">
+          <Link onClick={closeMenu} href="mailto:uuvedant4@gmail.com">
             Contact
           </Link>
           <Link onClick={closeMenu} href="/">

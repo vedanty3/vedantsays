@@ -46,6 +46,7 @@
   border: none;
   border-radius: 5px;
   width: max-content;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1280px) {

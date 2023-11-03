@@ -37,7 +37,18 @@ async function SinglePage({ params }) {
             )}
             <div className={styles.userTextContainer}>
               <span className={styles.username}>{data?.user.name}</span>
-              <span className={styles.date}>01.02.2023</span>
+              {data?.createdAt && (
+                <span className={styles.date}>
+                  {new Date(data?.createdAt).toLocaleString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  })}
+                </span>
+              )}
             </div>
           </div>
         </div>

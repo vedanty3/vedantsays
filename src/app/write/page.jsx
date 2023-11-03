@@ -46,7 +46,8 @@ const formats = [
 const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
-
+  const [isFeatured, setIsFeatured] = useState(false);
+  const [isEditorsPick, setIsEditorsPick] = useState(false);
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");
@@ -116,6 +117,7 @@ const WritePage = () => {
         img: media,
         slug: sluggedTitle,
         catSlug: catSlug || "style", //If not selected, choose the general category
+        isFeatured: isFeatured,
       }),
     });
     if (res.status === 200) {
@@ -132,20 +134,42 @@ const WritePage = () => {
         className={styles.input}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <select
-        className={styles.select}
-        onChange={(e) => setCatSlug(e.target.value)}
-      >
-        <option selected disabled value="">
-          category
-        </option>
-        <option value="style">style</option>
-        <option value="fashion">fashion</option>
-        <option value="food">food</option>
-        <option value="culture">culture</option>
-        <option value="travel">travel</option>
-        <option value="coding">coding</option>
-      </select>
+      <div className={styles.postOptions}>
+        <div>
+          <select
+            className={styles.select}
+            onChange={(e) => setCatSlug(e.target.value)}
+          >
+            <option selected disabled value="">
+              category
+            </option>
+            <option value="style">style</option>
+            <option value="fashion">fashion</option>
+            <option value="food">food</option>
+            <option value="culture">culture</option>
+            <option value="travel">travel</option>
+            <option value="coding">coding</option>
+          </select>
+        </div>
+        <div>
+          <input
+            onChange={(e) => setIsFeatured(e.target.checked)}
+            type="checkbox"
+            id="featured"
+            name="featured"
+          />
+          <label for="featured">Featured</label>
+        </div>
+        <div>
+          <input
+            onChange={(e) => setIsEditorsPick(e.target.checked)}
+            type="checkbox"
+            id="editors-pick"
+            name="editors-pick"
+          />
+          <label for="editors-pick">Editors Pick</label>
+        </div>
+      </div>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
           <Image src="/plus.png" alt="" width={16} height={16} />

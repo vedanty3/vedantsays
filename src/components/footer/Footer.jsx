@@ -11,10 +11,9 @@ const Footer = () => {
           <h1 className={styles.logoText}>vedantsays</h1>
         </div>
         <p className={styles.desc}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias
-          soluta cumque qui atque in et facilis, nobis repellat repudiandae
-          excepturi exercitationem corporis labore neque quasi est, ea
-          blanditiis minima omnis! Nisi, quibusdam ipsa!
+          vedantsays is crafted by my hands, this space is a culmination of
+          insightful tech discussions and problem-solving journeys tailored
+          exclusively for you.
         </p>
         <div className={styles.icons}>
           <Link
@@ -54,16 +53,16 @@ const Footer = () => {
         <div className={styles.list}>
           <span className={styles.listTitle}>Links</span>
           <Link href="/">Homepage</Link>
-          <Link href="/">Blog</Link>
+          <Link href="/blog?cat=style">Blog</Link>
           <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
+          <Link href="mailto:uuvedant4@gmail.com">Contact</Link>
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Tags</span>
-          <Link href="/">Style</Link>
-          <Link href="/">Fashion</Link>
-          <Link href="/">Coding</Link>
-          <Link href="/">Travel</Link>
+          <Link href="/blog?cat=style">Style</Link>
+          <Link href="/blog?cat=fashion">Fashion</Link>
+          <Link href="/blog?cat=coding">Coding</Link>
+          <Link href="/blog?cat=travel">Travel</Link>
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Social</span>
