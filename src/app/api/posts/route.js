@@ -14,6 +14,9 @@ export const GET = async (req) => {
     where: {
       ...(cat && { catSlug: cat }),
     },
+    orderBy: {
+      createdAt: "desc",
+    },
   };
   try {
     const [posts, count] = await prisma.$transaction([

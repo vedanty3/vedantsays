@@ -6,7 +6,7 @@ function MenuCategories() {
     <div className={styles.categoryList}>
       <Link
         href="/blog?cat=style"
-        className={`${styles.categoryItem} ${styles.style}`}
+        className={`${styles.categoryItem} ${styles.sports}`}
       >
         Style
       </Link>

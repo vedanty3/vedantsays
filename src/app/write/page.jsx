@@ -116,8 +116,9 @@ const WritePage = () => {
         desc: value,
         img: media,
         slug: sluggedTitle,
-        catSlug: catSlug || "style", //If not selected, choose the general category
+        catSlug: catSlug || "style",
         isFeatured: isFeatured,
+        isEditorsPick: isEditorsPick,
       }),
     });
     if (res.status === 200) {

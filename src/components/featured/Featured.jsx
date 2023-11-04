@@ -31,7 +31,12 @@ function Featured({ featuredPost }) {
             <p
               className={styles.postDesc}
               dangerouslySetInnerHTML={{
-                __html: featuredPost.desc.substring(0, 300),
+                __html: featuredPost.desc
+                  .substring(
+                    0,
+                    Math.min(featuredPost.desc.lastIndexOf(".", 300) + 1, 300)
+                  )
+                  .trim(),
               }}
             />
             <Link href={`/posts/${featuredPost.slug}`}>

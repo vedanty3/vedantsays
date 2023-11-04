@@ -2,81 +2,44 @@ import Link from "next/link";
 import styles from "./menuPosts.module.css";
 import Image from "next/image";
 
-function MenuPosts({ withImage }) {
+function MenuPosts({ mostPopularPosts, editorsPickPosts, withImage }) {
   return (
     <div className={styles.items}>
-      <Link href="" className={styles.item}>
-        {withImage && (
-          <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-          </div>
-        )}
-        <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.travel}`}>Travel</span>
-          <h3 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet. Error harum, repellendus voluptas?
-          </h3>
-          <div className={styles.detail}>
-            <span className={styles.username}>John Doe</span>
-            <span className={styles.date}> - 10.03.2023</span>
-          </div>
-        </div>
-      </Link>
-      <Link href="" className={styles.item}>
-        {withImage && (
-          <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-          </div>
-        )}
-        <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.culture}`}>
-            Culture
-          </span>
-          <h3 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet. Error harum, repellendus voluptas?
-          </h3>
-          <div className={styles.detail}>
-            <span className={styles.username}>John Doe</span>
-            <span className={styles.date}> - 10.03.2023</span>
-          </div>
-        </div>
-      </Link>
-      <Link href="" className={styles.item}>
-        {withImage && (
-          <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-          </div>
-        )}
-        <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.food}`}>Food</span>
-          <h3 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet. Error harum, repellendus voluptas?
-          </h3>
-          <div className={styles.detail}>
-            <span className={styles.username}>John Doe</span>
-            <span className={styles.date}> - 10.03.2023</span>
-          </div>
-        </div>
-      </Link>
-      <Link href="" className={styles.item}>
-        {withImage && (
-          <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-          </div>
-        )}
-        <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.fashion}`}>
-            Fashion
-          </span>
-          <h3 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet. Error harum, repellendus voluptas?
-          </h3>
-          <div className={styles.detail}>
-            <span className={styles.username}>John Doe</span>
-            <span className={styles.date}> - 10.03.2023</span>
-          </div>
-        </div>
-      </Link>
+      {(withImage ? editorsPickPosts : mostPopularPosts)?.map((post) => {
+        return (
+          <Link
+            key={post.id}
+            href={`/posts/${post.slug}`}
+            className={styles.item}
+          >
+            {withImage && (
+              <div className={styles.imageContainer}>
+                <Image src={post.img} alt="" fill className={styles.image} />
+              </div>
+            )}
+            <div className={styles.textContainer}>
+              <span className={`${styles.category} ${styles[post.catSlug]}`}>
+                {post.catSlug}
+              </span>
+              <h3 className={styles.postTitle}>{post.title}</h3>
+              <div className={styles.detail}>
+                <span className={styles.username}>{post?.user?.name}</span>{" "}
+                <span className={styles.date}>
+                  -{" "}
+                  {new Date(post?.createdAt).toLocaleString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  })}
+                </span>
+              </div>
+            </div>
+          </Link>
+        );
+      })}
     </div>
   );
 }

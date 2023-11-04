@@ -3,6 +3,7 @@ import styles from "./singlePage.module.css";
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 import decodeUriComponent from "decode-uri-component";
+import { getMostPopularPosts, getEditorsPickPosts } from "@/app/page";
 
 const getData = async (slug) => {
   const response = await fetch(`http://localhost:3000/api/posts/${slug}`, {
@@ -15,6 +16,8 @@ const getData = async (slug) => {
 };
 
 async function SinglePage({ params }) {
+  const mostPopularPosts = await getMostPopularPosts();
+  const editorsPickPosts = await getEditorsPickPosts();
   const slug = params.slug;
   const encodedSlug = decodeUriComponent(slug);
 
@@ -68,7 +71,10 @@ async function SinglePage({ params }) {
             <Comments postSlug={encodedSlug} />
           </div>
         </div>
-        <Menu />
+        <Menu
+          mostPopularPosts={mostPopularPosts}
+          editorsPickPosts={editorsPickPosts}
+        />
       </div>
     </div>
   );
