@@ -1,6 +1,6 @@
 import styles from "./menu.module.css";
-import MenuPosts from "../menuPosts/menuPosts";
 import MenuCategories from "../menuCategories/MenuCategories";
+import MenuPosts from "../../../src/components/menuPosts/MenuPosts";
 
 const Menu = ({ mostPopularPosts, editorsPickPosts }) => {
   return (
