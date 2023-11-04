@@ -64,18 +64,20 @@ model Category {
 }
 
 model Post {
-  id        String    @id @default(cuid()) @map("_id")
-  createdAt DateTime  @default(now())
-  slug      String    @unique
-  title     String
-  desc      String
-  img       String?
-  views     Int       @default(0)
-  catSlug   String
-  cat       Category  @relation(fields: [catSlug], references: [slug])
-  userEmail String
-  user      User      @relation(fields: [userEmail], references: [email])
-  comments  Comment[]
+  id            String    @id @default(cuid()) @map("_id")
+  createdAt     DateTime  @default(now())
+  slug          String    @unique
+  title         String
+  desc          String
+  img           String?
+  views         Int       @default(0)
+  isFeatured    Boolean
+  isEditorsPick Boolean
+  catSlug       String
+  cat           Category  @relation(fields: [catSlug], references: [slug])
+  userEmail     String
+  user          User      @relation(fields: [userEmail], references: [email])
+  comments      Comment[]
 }
 
 model Comment {

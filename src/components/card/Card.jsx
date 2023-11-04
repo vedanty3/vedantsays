@@ -22,7 +22,7 @@ function Card({ item }) {
         </Link>
         <p
           className={styles.desc}
-          dangerouslySetInnerHTML={{ __html: item.desc.substring(0, 210) }}
+          dangerouslySetInnerHTML={{ __html: item.desc.substring(0, 200) }}
         />
         <Link className={styles.link} href={`/posts/${item.slug}`}>
           Read More

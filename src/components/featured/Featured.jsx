@@ -1,29 +1,50 @@
 import Image from "next/image";
 import styles from "./featured.module.css";
+import Link from "next/link";
 
-function Featured() {
+function Featured({ featuredPost }) {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b>Hey, Vedant Yetekar here!</b> Let's Explore infinite tech horizons.
+        <b>Hey, Vedant Yetekar here!</b> {"Let's"} explore infinite tech
+        horizons.
       </h1>
-      <div className={styles.post}>
-        <div className={styles.imgContainer}>
-          <Image className={styles.image} src="/p1.jpeg" alt="" fill />
+      {featuredPost && (
+        <div className={styles.post}>
+          {featuredPost.img && (
+            <div className={styles.imgContainer}>
+              <Image
+                className={styles.image}
+                src={featuredPost.img}
+                alt={featuredPost.title}
+                fill
+              />
+            </div>
+          )}
+          <div className={styles.textContainer}>
+            <Link href={`/posts/${featuredPost.slug}`}>
+              <h1
+                className={styles.postTitle}
+                dangerouslySetInnerHTML={{ __html: featuredPost.title }}
+              />
+            </Link>
+            <p
+              className={styles.postDesc}
+              dangerouslySetInnerHTML={{
+                __html: featuredPost.desc
+                  .substring(
+                    0,
+                    Math.min(featuredPost.desc.lastIndexOf(".", 300) + 1, 300)
+                  )
+                  .trim(),
+              }}
+            />
+            <Link href={`/posts/${featuredPost.slug}`}>
+              <button className={styles.button}>Read More</button>
+            </Link>
+          </div>
         </div>
-        <div className={styles.textContainer}>
-          <h1 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, sequi!
-          </h1>
-          <p className={styles.postDesc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            pariatur, repellendus harum molestiae rem est! Nesciunt aperiam
-            neque culpa delectus quo, fugit perferendis beatae enim, quaerat,
-            asperiores ipsam amet quod laborum commodi dolorem quos quibusdam!
-          </p>
-          <button className={styles.button}>Read More</button>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

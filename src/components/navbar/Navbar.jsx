@@ -44,7 +44,7 @@ const Navbar = () => {
         <Link className={styles.link} href="/">
           About
         </Link>
-        <Link className={styles.link} href="/">
+        <Link className={styles.link} href="mailto:uuvedant4@gmail.com">
           Contact
         </Link>
         <AuthLinks />
