@@ -7,7 +7,7 @@ import { getMostPopularPosts, getEditorsPickPosts } from "@/app/page";
 
 const getData = async (slug) => {
   const response = await fetch(
-    `${process.env.NEXTAUTH_URL}/api/posts/${slug}`,
+    `https://vedantsays-1xwz.vercel.app//api/posts/${slug}`,
     {
       cache: "no-store",
     }

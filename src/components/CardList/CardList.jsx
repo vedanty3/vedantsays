@@ -6,7 +6,9 @@ const POST_PER_PAGE = 4;
 
 const getData = async (page, cat) => {
   const response = await fetch(
-    `${process.env.NEXTAUTH_URL}/api/posts?page=${page}&cat=${cat || ""}`,
+    `https://vedantsays-1xwz.vercel.app//api/posts?page=${page}&cat=${
+      cat || ""
+    }`,
     {
       cache: "no-store",
     }

@@ -3,9 +3,12 @@ import styles from "./categoryList.module.css";
 import Image from "next/image";
 
 const getData = async () => {
-  const response = await fetch("${process.env.NEXTAUTH_URL}/api/categories", {
-    cache: "no-store",
-  });
+  const response = await fetch(
+    "https://vedantsays-1xwz.vercel.app//api/categories",
+    {
+      cache: "no-store",
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed");
   }
