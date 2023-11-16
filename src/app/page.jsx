@@ -5,7 +5,7 @@ import CardList from "@/components/CardList/CardList";
 import Menu from "@/components/menu/Menu";
 
 const getFeaturedPost = async () => {
-  let response = await fetch(`http://localhost:3000/api/featured`, {
+  let response = await fetch(`${process.env.NEXTAUTH_URL}/api/featured`, {
     cache: "no-store",
   });
   if (!response.ok) {
@@ -16,7 +16,7 @@ const getFeaturedPost = async () => {
 };
 
 export const getMostPopularPosts = async () => {
-  let response = await fetch(`http://localhost:3000/api/menu`, {
+  let response = await fetch(`${process.env.NEXTAUTH_URL}/api/menu`, {
     cache: "no-store",
   });
   if (!response.ok) {
@@ -26,9 +26,12 @@ export const getMostPopularPosts = async () => {
 };
 
 export const getEditorsPickPosts = async () => {
-  let response = await fetch(`http://localhost:3000/api/menu/editorsPick`, {
-    cache: "no-store",
-  });
+  let response = await fetch(
+    `${process.env.NEXTAUTH_URL}/api/menu/editorsPick`,
+    {
+      cache: "no-store",
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed");
   }
