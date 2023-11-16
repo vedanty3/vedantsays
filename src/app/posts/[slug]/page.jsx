@@ -6,12 +6,9 @@ import decodeUriComponent from "decode-uri-component";
 import { getMostPopularPosts, getEditorsPickPosts } from "@/app/page";
 
 const getData = async (slug) => {
-  const response = await fetch(
-    `https://vedantsays.vercel.app/api/posts/${slug}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const response = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+    cache: "no-store",
+  });
   if (!response.ok) {
     throw new Error("Failed");
   }

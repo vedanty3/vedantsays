@@ -3,7 +3,7 @@ import styles from "./categoryList.module.css";
 import Image from "next/image";
 
 const getData = async () => {
-  const response = await fetch("https://vedantsays.vercel.app/api/categories", {
+  const response = await fetch("http://localhost:3000/api/categories", {
     cache: "no-store",
   });
   if (!response.ok) {
