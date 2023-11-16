@@ -20,7 +20,7 @@ const fetcher = async (url) => {
 const Comments = ({ postSlug }) => {
   const { status } = useSession();
   const { data, mutate, isLoading } = useSWR(
-    `https://vedantsays-1xwz.vercel.app//api/comments?postSlug=${postSlug}`,
+    `https://vedantsays.vercel.app/api/comments?postSlug=${postSlug}`,
     fetcher
   );
   const [desc, setDesc] = useState("");

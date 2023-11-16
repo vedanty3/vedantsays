@@ -7,12 +7,9 @@ import Menu from "@/components/menu/Menu";
 console.log(process.env.NEXTAUTH_URL);
 
 const getFeaturedPost = async () => {
-  let response = await fetch(
-    `https://vedantsays-1xwz.vercel.app//api/featured`,
-    {
-      cache: "no-store",
-    }
-  );
+  let response = await fetch(`https://vedantsays.vercel.app/api/featured`, {
+    cache: "no-store",
+  });
   if (!response.ok) {
     throw new Error("Failed");
   }
@@ -21,7 +18,7 @@ const getFeaturedPost = async () => {
 };
 
 export const getMostPopularPosts = async () => {
-  let response = await fetch(`https://vedantsays-1xwz.vercel.app//api/menu`, {
+  let response = await fetch(`https://vedantsays.vercel.app/api/menu`, {
     cache: "no-store",
   });
   if (!response.ok) {
@@ -32,7 +29,7 @@ export const getMostPopularPosts = async () => {
 
 export const getEditorsPickPosts = async () => {
   let response = await fetch(
-    `https://vedantsays-1xwz.vercel.app//api/menu/editorsPick`,
+    `https://vedantsays.vercel.app/api/menu/editorsPick`,
     {
       cache: "no-store",
     }

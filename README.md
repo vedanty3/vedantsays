@@ -12,7 +12,7 @@ yarn dev
 pnpm dev
 ```
 
-Open [https://vedantsays-1xwz.vercel.app/](https://vedantsays-1xwz.vercel.app/) with your browser to see the result.
+Open [https://vedantsays.vercel.app](https://vedantsays.vercel.app) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
