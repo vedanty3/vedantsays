@@ -6,7 +6,7 @@ const POST_PER_PAGE = 4;
 
 const getData = async (page, cat) => {
   const response = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    `${process.env.PORT_URI}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }

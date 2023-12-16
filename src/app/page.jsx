@@ -4,10 +4,8 @@ import CategoryList from "@/components/CategoryList/CategoryList";
 import CardList from "@/components/CardList/CardList";
 import Menu from "@/components/menu/Menu";
 
-console.log(process.env.NEXTAUTH_URL);
-
 const getFeaturedPost = async () => {
-  let response = await fetch(`http://localhost:3000/api/featured`, {
+  let response = await fetch(`${process.env.PORT_URI}/api/featured`, {
     cache: "no-store",
   });
   if (!response.ok) {
@@ -18,7 +16,7 @@ const getFeaturedPost = async () => {
 };
 
 export const getMostPopularPosts = async () => {
-  let response = await fetch(`http://localhost:3000/api/menu`, {
+  let response = await fetch(`${process.env.PORT_URI}/api/menu`, {
     cache: "no-store",
   });
   if (!response.ok) {
@@ -28,7 +26,7 @@ export const getMostPopularPosts = async () => {
 };
 
 export const getEditorsPickPosts = async () => {
-  let response = await fetch(`http://localhost:3000/api/menu/editorsPick`, {
+  let response = await fetch(`${process.env.PORT_URI}/api/menu/editorsPick`, {
     cache: "no-store",
   });
   if (!response.ok) {
