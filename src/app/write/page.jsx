@@ -138,12 +138,10 @@ const WritePage = () => {
       <div className={styles.postOptions}>
         <div>
           <select
+            defaultValue={"category"}
             className={styles.select}
             onChange={(e) => setCatSlug(e.target.value)}
           >
-            <option selected disabled value="">
-              category
-            </option>
             <option value="style">style</option>
             <option value="fashion">fashion</option>
             <option value="food">food</option>
@@ -159,7 +157,7 @@ const WritePage = () => {
             id="featured"
             name="featured"
           />
-          <label for="featured">Featured</label>
+          <label htmlFor="featured">Featured</label>
         </div>
         <div>
           <input
@@ -168,7 +166,7 @@ const WritePage = () => {
             id="editors-pick"
             name="editors-pick"
           />
-          <label for="editors-pick">Editors Pick</label>
+          <label htmlFor="editors-pick">Editors Pick</label>
         </div>
       </div>
       <div className={styles.editor}>
