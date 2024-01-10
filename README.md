@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **vedantsays**
 
-## Getting Started
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-First, run the development server:
+### *Overview*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+vedantsays is a blog application built with Next.js, Prisma, MongoDB, and React Quill Editor. It incorporates several key features to provide users with a seamless and engaging blogging experience. Below, you'll find information on technologies used, and an overview of the features.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### *Technologies Used ⚙️*
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. *Next.js*: Utilizes the power of React with the simplicity of Next.js for a seamless and efficient front-end experience.
+2. *Prisma*: Employs Prisma as the data access layer for a type-safe database interface and powerful querying capabilities.
+3. *MongoDB*: Leverages MongoDB as the database solution for scalable and flexible data storage.
+4. *React Quill Editor*: A React component for the Quill rich text editor.
+5. *OAuth with NextAuth*: Implements secure OAuth authentication using NextAuth for a seamless and secure login process.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### *Features*
 
-## Learn More
+*Dark and Light Mode: Utilizes Context API and useContext hook for seamless switching between dark and light modes.*
+![Screenshot 1](screenshots/1.png)
 
-To learn more about Next.js, take a look at the following resources:
+![Screenshot 2](screenshots/2.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+*OAuth Authentication: Implements secure authentication using NextAuth, supporting various authentication providers.*
+![Screenshot 3](screenshots/0.png)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*Pagination: Provides a user-friendly browsing experience with paginated blog posts.*
+![Screenshot 4](screenshots/5.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+*Role-Based Authentication: Enhances access control through role-based authentication, ensuring proper authorization.*
+![Screenshot 5](screenshots/-1.png)
+
+
+*Featured Post Section: Showcases a featured post section on the homepage for spotlighting important content.*
+![Screenshot 6](screenshots/4.png)
+
+
+*Genre-Specific Pages: Displays genre-specific pages for users to explore blog posts based on their interests.*
+![Screenshot 7](screenshots/6.png)
+
+
+*Popular Posts: Highlights popular posts based on views, enhancing user engagement.*
+![Screenshot 8](screenshots/6.png)
+
+
+*Comments Section: For users to express their views on the content.*
+![Screenshot 9](screenshots/7.png)
